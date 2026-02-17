@@ -7,5 +7,4 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::resource('todo', TodoController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
