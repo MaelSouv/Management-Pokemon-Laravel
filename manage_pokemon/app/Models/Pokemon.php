@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pokemon extends Model
 {
-        protected $fillable = [
+    protected $fillable = [
         'name',
         'japanese_name',
         'pokedex_number',
@@ -19,6 +19,19 @@ class Pokemon extends Model
         'sp_attack',
         'defense',
         'sp_defense',
-        'speed'
+        'speed',
     ];
+
+    protected $casts = [
+        'filepath' => 'string',
+    ];
+
+    public function getFilepathAttribute()
+    {
+        $filepath = "images/{$this->name}.png";
+        if (!file_exists(public_path($filepath))) {
+            $filepath = "images/{$this->name}.jpg";
+        }
+        return $filepath;
+    }
 }
