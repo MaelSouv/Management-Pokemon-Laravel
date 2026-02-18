@@ -29,9 +29,10 @@ class Pokemon extends Model
     public function getFilepathAttribute()
     {
         $filepath = "images/{$this->name}.png";
-        if (!file_exists(public_path($filepath))) {
+        if (! file_exists(public_path($filepath))) {
             $filepath = "images/{$this->name}.jpg";
         }
+
         return $filepath;
     }
 }

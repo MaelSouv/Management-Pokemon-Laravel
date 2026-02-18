@@ -15,6 +15,8 @@
                 </div>
             @endforeach
         </div>
+        <div class="pagination" style="display:flex; justify-content:center; margin-top:20px;">
+            {{ $pokemons->links() }}
     </div>
 </div>
 @endsection

@@ -23,7 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $pokemons = Pokemon::all(); // Récupère tous les Pokémon de la base de données
+        // Récupère les Pokémon par pages (9 par page)
+        $pokemons = Pokemon::paginate(9);
 
         return view('home', compact('pokemons'));
     }
