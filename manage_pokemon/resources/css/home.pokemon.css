@@ -1,11 +1,18 @@
 /* Pagination */
 .pagination-wrapper {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    width: 100%;
     margin: 30px 0;
+    text-align: center;
 }
 
-.pagination a, .pagination span {
+.pagination {
+    display: inline-flex;
+    align-items: center;
+}
+
+.pagination a,
+.pagination span {
     display: inline-block;
     margin: 0 3px;
     padding: 6px 12px;
@@ -22,8 +29,16 @@
     background-color: #f0f0f0;
 }
 
-.pagination .active span {
+.pagination .active {
     background-color: #333;
     color: #fff;
     border-color: #333;
+}
+
+.pokemon-card-image {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 10px auto 0;
 }
