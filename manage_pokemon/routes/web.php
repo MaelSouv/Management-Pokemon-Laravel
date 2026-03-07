@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('index');
+    return redirect()->route('home');
 });
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pokemon', [App\Http\Controllers\PokemonController::class, 'pokemon'])->name('pokemon');
+Route::get('/pokemon/{id}', [App\Http\Controllers\PokemonController::class, 'pokemon'])->name('pokemon');

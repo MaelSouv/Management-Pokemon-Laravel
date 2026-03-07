@@ -21,10 +21,10 @@ class PokemonController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function pokemon()
+    public function pokemon($id)
     {
-        $pokemons = Pokemon::paginate(1);
+        $pokemon = Pokemon::findOrFail($id);
 
-        return view('pokemon', compact('pokemons'));
+        return view('pokemon', compact('pokemon'));
     }
 }
