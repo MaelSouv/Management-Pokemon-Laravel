@@ -111,4 +111,20 @@ class DeckController extends Controller
 
         return redirect()->route('decks.edit', $deck->id);
     }
+ 
+    public function clear($id, $slot)
+    {
+        $deck = Deck::where('user_id', auth()->id())->findOrFail($id);
+ 
+        $slotIndex = (int) $slot;
+        if ($slotIndex < 1 || $slotIndex > 6) {
+            abort(400, 'Slot invalide');
+        }
+ 
+        $column = 'slot' . $slotIndex;
+        $deck->$column = null;
+        $deck->save();
+ 
+        return redirect()->route('decks.edit', $deck->id);
+    }
 }
