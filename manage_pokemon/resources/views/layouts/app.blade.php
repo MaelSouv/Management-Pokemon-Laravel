@@ -25,6 +25,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                             <a class="navbar-brand" href="{{ url('/home') }}">{{ __('Home') }}</a>
+                            <a class="navbar-brand" href="{{ route('decks.index') }}">{{ __('Decks') }}</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
