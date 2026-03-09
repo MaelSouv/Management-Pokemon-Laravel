@@ -3,8 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h1 class="text-center">Welcome to the page about {{ $pokemon->name }}</h1>
+        <div class="col-md-12">
+            <div style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center;">
+                <div style="justify-self:start;">
+                    <button type="button" onclick="history.back()" style="padding:10px 16px; border:1px solid #ccc; border-radius:6px; background:#fff; color:#333;">Retour</button>
+                </div>
+                <h1 class="text-center" style="margin:0;">Welcome to the page about {{ $pokemon->name }}</h1>
+                <div></div>
+            </div>
         </div>
         <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px;">
             <div style="flex:1 1 30%; min-width:200px; border:1px solid #ccc; border-radius:8px; padding:20px; text-align:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);">

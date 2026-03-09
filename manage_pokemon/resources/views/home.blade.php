@@ -19,7 +19,7 @@
                 <div style="flex:1 1 160px; min-width:160px;">
                     <label for="generation">Generation</label>
                     <select id="generation" name="generation" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
-                        <option value="">Toutes</option>
+                        <option value="">All</option>
                         @isset($generations)
                             @foreach($generations as $gen)
                                 <option value="{{ $gen }}" {{ (string)$gen === request('generation') ? 'selected' : '' }}>{{ $gen }}</option>
@@ -30,7 +30,7 @@
                 <div style="flex:1 1 160px; min-width:160px;">
                     <label for="type1">Type 1</label>
                     <select id="type1" name="type1" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
-                        <option value="">Tous</option>
+                        <option value="">All</option>
                         @isset($types)
                             @foreach($types as $t)
                                 <option value="{{ $t }}" {{ $t === request('type1') ? 'selected' : '' }}>{{ strtoupper($t) }}</option>
@@ -41,7 +41,7 @@
                 <div style="flex:1 1 160px; min-width:160px;">
                     <label for="type2">Type 2</label>
                     <select id="type2" name="type2" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
-                        <option value="">Tous</option>
+                        <option value="">All</option>
                         @isset($types)
                             @foreach($types as $t)
                                 <option value="{{ $t }}" {{ $t === request('type2') ? 'selected' : '' }}>{{ strtoupper($t) }}</option>
@@ -53,8 +53,8 @@
                     <label for="is_legendary">Legendary</label>
                     <select id="is_legendary" name="is_legendary" style="width:100%; padding:8px; border:1px solid #ccc; border-radius:6px;">
                         <option value="">Tous</option>
-                        <option value="1" {{ request('is_legendary') === '1' ? 'selected' : '' }}>Oui</option>
-                        <option value="0" {{ request('is_legendary') === '0' ? 'selected' : '' }}>Non</option>
+                        <option value="1" {{ request('is_legendary') === '1' ? 'selected' : '' }}>Yes</option>
+                        <option value="0" {{ request('is_legendary') === '0' ? 'selected' : '' }}>No</option>
                     </select>
                 </div>
                 <div style="display:flex; gap:8px;">

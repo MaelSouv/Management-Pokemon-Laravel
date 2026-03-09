@@ -17,6 +17,7 @@
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
         @vite('resources/css/app.css')
+        @vite('resources/css/home.pokemon.css')
     @endif
 </head>
 <body>
@@ -28,6 +29,7 @@
                     <ul class="navbar-nav me-auto">
                             <a class="navbar-brand" href="{{ url('/home') }}">{{ __('Home') }}</a>
                             <a class="navbar-brand" href="{{ route('decks.index') }}">{{ __('Decks') }}</a>
+                            <a class="navbar-brand" href="{{ route('pokemons.index') }}">Pokemons</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

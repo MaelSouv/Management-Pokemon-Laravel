@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeckController;
+use App\Http\Controllers\PokemonController;
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -13,6 +14,7 @@ Route::get('/pokemon/{id}', [App\Http\Controllers\PokemonController::class, 'pok
 
 Route::middleware('auth')->group(function () {
     Route::resource('decks', DeckController::class);
+    Route::resource('pokemons', PokemonController::class)->except(['show']);
     Route::post('/decks/{id}/slots/{slot}', [DeckController::class, 'assign'])->name('decks.slot.assign');
     Route::delete('/decks/{id}/slots/{slot}', [DeckController::class, 'clear'])->name('decks.slot.clear');
 });
