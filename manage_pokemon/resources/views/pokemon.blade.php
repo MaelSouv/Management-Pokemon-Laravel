@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div style="display:grid; grid-template-columns: 1fr auto 1fr; align-items:center;">
                 <div style="justify-self:start;">
-                    <button type="button" onclick="history.back()" style="padding:10px 16px; border:1px solid #ccc; border-radius:6px; background:#fff; color:#333;">Retour</button>
+                    <button type="button" onclick="history.back()" style="padding:10px 16px; border:1px solid #ccc; border-radius:6px; background:#fff; color:#333;">Back</button>
                 </div>
                 <h1 class="text-center" style="margin:0;">Welcome to the page about {{ $pokemon->name }}</h1>
                 <div></div>
